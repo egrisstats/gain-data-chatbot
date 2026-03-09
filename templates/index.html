@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GAIN Data Chatbot</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>GAIN Data Chatbot</h1>
+      <p class="muted">Upload your files or use default paths, then ask questions about the data.</p>
+
+      <section class="card">
+        <h2>1) Load Data</h2>
+        <form id="loadForm">
+          <label>Main roster (CSV)</label>
+          <input type="file" id="mainFile" accept=".csv" />
+          <label>Group roster (XLSX)</label>
+          <input type="file" id="groupFile" accept=".xlsx,.xls,.csv" />
+          <div class="actions">
+            <button type="submit">Load Uploaded Files</button>
+            <button type="button" id="loadDefault">Load Default Paths</button>
+          </div>
+        </form>
+        <p id="loadStatus" class="status"></p>
+      </section>
+
+      <section class="card">
+        <h2>2) Ask a Question</h2>
+        <div id="chatLog" class="chat"></div>
+        <form id="chatForm" class="chatInput">
+          <input id="question" type="text" placeholder="Example: How many female respondents are in each country?" />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
